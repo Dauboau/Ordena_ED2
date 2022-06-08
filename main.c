@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "declara.o"
 
 #define debug 1
-
-void OrdenaNumeros(int **A, int n);
-int **AlocaMatriz(int m, int n);
-void LiberaMatriz(int **M, int m);
 
 void ContagemIntersecoes(char* file_a,char* file_b,int na,int nb,char* output_file){
   

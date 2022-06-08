@@ -1,0 +1,3 @@
+void OrdenaNumeros(int **A, int n);
+int **AlocaMatriz(int m, int n);
+void LiberaMatriz(int **M, int m);
