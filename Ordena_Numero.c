@@ -37,8 +37,8 @@ void OrdenaDigitos(int **A, int n, int pos){
     C[B[digito]][1] = A[i][1];
 
     //gambiarra que ta fznd funcionar
-    if(i==0)
-      break;
+    //if(i==0) // comentei por teste trocando lá embaixo o 1 por 0
+      //break;
 
    }
    
@@ -72,7 +72,7 @@ void OrdenaNumeros(int **A, int n){
 
     int pos = 1;
 
-    while((maior/pos) > 1){
+    while((maior/pos) > 0){ // era 1 invez de 0
         
       OrdenaDigitos(A, n, pos);
       pos = pos*10;
