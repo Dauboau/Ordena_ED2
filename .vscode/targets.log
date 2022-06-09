@@ -1,5 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 3.81
+ 
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
 # There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
@@ -8,7 +9,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jun  8 22:04:00 2022
+# Make data base, printed on Wed Jun  8 23:09:06 2022
 
 # Variables
 
@@ -135,7 +136,6 @@ SECURITYSESSIONID = 186a8
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -153,9 +153,9 @@ VSCODE_PID = 64150
 
 # Directories
 
-# . (device 16777223, inode 40603538): 18 files, no impossibilities.
+# . (device 16777223, inode 40603538): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -166,6 +166,7 @@ VSCODE_PID = 64150
 all:
 #  Command-line target.
 #  Implicit rule search has not been done.
+ 
 #  Implicit/static pattern stem: `'
 #  File does not exist.
 #  File has been updated.
@@ -189,7 +190,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
 #  commands to execute (from `Makefile', line 2):
-	gcc main.c Ordena_Numero.c -o main
+	gcc main.c Contagem_Intersecoes.c Ordena_Numero.c -o main
 	
 
 # Not a target:
@@ -201,7 +202,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 22:03:51
+#  Last modified 2022-06-08 23:08:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -234,6 +235,6 @@ run:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  8 22:04:00 2022
+# Finished Make data base on Wed Jun  8 23:09:06 2022
 
  
