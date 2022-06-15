@@ -23,10 +23,15 @@ void LerPrimeiraLinha(char **primeira_linha, FILE *arquivo) {
     (*primeira_linha)[char_index - 1] = '\0';
 }
 
-void Ctrl_F(FILE *arq_texto, FILE *arq_trechos, FILE *arq_saida){
+
+void Ctrl_F(char* nome_texto, char* nome_trechos, char* nome_saida){
     /*
         Entrada: arquivo trechos, arquivo texto, arquivo saida
     */
+
+   FILE* arq_texto = fopen(nome_texto, "r");
+   FILE* arq_trechos = fopen(nome_trechos, "r");
+   FILE* arq_saida = fopen(nome_saida, "a");
 
    char *trecho, *texto, *texto_aux;
    texto = malloc(sizeof(char)*1);
@@ -67,21 +72,8 @@ void Ctrl_F(FILE *arq_texto, FILE *arq_trechos, FILE *arq_saida){
 
    free(texto);
    free(texto_aux);
+   fclose(arq_texto);
+   fclose(arq_trechos);
+   fclose(arq_saida);
 
-}
-
-int main(int *argc, char *argv []){
-
-    FILE *texto, *trechos, *saida;
-    texto = fopen("texto.txt", "r");
-    trechos = fopen("trechos.txt", "r");
-    saida = fopen("saida.txt", "a");
-
-    Ctrl_F(texto, trechos, saida);
-
-    fclose(texto);
-    fclose(trechos);
-    fclose(saida);
-
-    return 0;
 }
