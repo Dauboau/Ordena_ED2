@@ -1,6 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 3.81
- 
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
 # There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
@@ -9,7 +8,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jun  8 23:09:06 2022
+# Make data base, printed on Tue Jun 14 18:27:18 2022
+ 
 
 # Variables
 
@@ -18,7 +18,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -41,13 +40,13 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/pm/qzqp4smx2xldy358pwfjr7br0000gp/T/vscode-ipc-fcbe5d2f-8ebb-4e3a-98af-afac73ffcb99.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/pm/qzqp4smx2xldy358pwfjr7br0000gp/T/vscode-ipc-e21da7f2-64be-41c1-a468-d6bfdfa9cbf3.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin
 # environment
-LaunchInstanceID = 1C1EC989-783C-4B52-AEEA-F070FA12FC61
+LaunchInstanceID = B8A55CBD-E734-4B25-9B5D-673B7D03453C
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -55,7 +54,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.11RwlcPe0w/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.FNl5hKmBe4/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -75,7 +74,7 @@ VSCODE_CODE_CACHE_PATH = /Users/Daniel/Library/Application Support/Code/CachedDa
 # environment
 LOGNAME = Daniel
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -88,8 +87,6 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# environment
-LOCAL_GIT_DIRECTORY = /Applications/GitHub Desktop.app/Contents/Resources/app/git
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -131,11 +128,12 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # environment
-SECURITYSESSIONID = 186a8
+SECURITYSESSIONID = 186a5
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+ 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -143,9 +141,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 64150
+VSCODE_PID = 501
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=1/91=1%
+# Load=64/1024=6%, Rehash=0, Collisions=1/90=1%
 
 # Pattern-specific Variable Values
 
@@ -153,9 +151,9 @@ VSCODE_PID = 64150
 
 # Directories
 
-# . (device 16777223, inode 40603538): 19 files, no impossibilities.
+# . (device 16777222, inode 40603538): 25 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -166,7 +164,6 @@ VSCODE_PID = 64150
 all:
 #  Command-line target.
 #  Implicit rule search has not been done.
- 
 #  Implicit/static pattern stem: `'
 #  File does not exist.
 #  File has been updated.
@@ -190,7 +187,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
 #  commands to execute (from `Makefile', line 2):
-	gcc main.c Contagem_Intersecoes.c Ordena_Numero.c -o main
+	gcc main.c Contagem_Intersecoes.c Ordena_Numero.c ctrlF.c pilha.c -o main
 	
 
 # Not a target:
@@ -202,7 +199,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 23:08:57
+#  Last modified 2022-06-14 18:27:05
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -235,6 +232,6 @@ run:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  8 23:09:06 2022
+# Finished Make data base on Tue Jun 14 18:27:18 2022
 
  

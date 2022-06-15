@@ -1,5 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/Daniel/Documents/GitHub/Ordena_ED2'
-gcc main.c Contagem_Intersecoes.c Ordena_Numero.c -o main
+gcc main.c Contagem_Intersecoes.c Ordena_Numero.c ctrlF.c pilha.c -o main
 make: Leaving directory `/Users/Daniel/Documents/GitHub/Ordena_ED2'
  

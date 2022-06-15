@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "declara.o"
+#include "declara.h"
 
 void ContagemIntersecoes(char* file_a,char* file_b,int na,int nb,char* output_file){
   

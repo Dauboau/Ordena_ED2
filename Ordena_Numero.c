@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "declara.h"
 
 void OrdenaDigitos(int **A, int n, int pos){
 
