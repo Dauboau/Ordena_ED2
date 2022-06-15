@@ -2,14 +2,9 @@
 #include<stdlib.h>
 #include<string.h>
 
-/*
-    USAR FGETS NO LUGAR DA FUNÇÃO "LER PRIMERIA LINHA"
-
-*/
-
 void LerPrimeiraLinha(char **primeira_linha, FILE *arquivo) {
 
-    size_t linha_len = 16;
+    size_t linha_len = 64;
     size_t char_index = 0;
 
     *primeira_linha = malloc(sizeof(char)*linha_len);
@@ -17,7 +12,7 @@ void LerPrimeiraLinha(char **primeira_linha, FILE *arquivo) {
     while (!feof(arquivo) && (*primeira_linha)[char_index - 1] != '\n') {
 
         if (linha_len == char_index) {
-            linha_len *= 8;
+            linha_len *= 16;
             *primeira_linha = realloc(*primeira_linha, sizeof(char)*linha_len);
         }
 
