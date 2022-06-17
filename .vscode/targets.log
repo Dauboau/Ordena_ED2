@@ -8,8 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Jun 14 18:27:18 2022
- 
+# Make data base, printed on Thu Jun 16 21:56:28 2022
 
 # Variables
 
@@ -30,7 +29,7 @@ CURDIR := /Users/Daniel/Documents/GitHub/Ordena_ED2
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/tcf.json","_cacheRoot":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/tcf.json","_cacheRoot":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/Users/Daniel/Library/Application Support/Code/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
@@ -40,13 +39,11 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/pm/qzqp4smx2xldy358pwfjr7br0000gp/T/vscode-ipc-e21da7f2-64be-41c1-a468-d6bfdfa9cbf3.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/pm/qzqp4smx2xldy358pwfjr7br0000gp/T/vscode-ipc-8b272289-8974-46df-acc6-8cef16de67cf.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin
-# environment
-LaunchInstanceID = B8A55CBD-E734-4B25-9B5D-673B7D03453C
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -70,7 +67,7 @@ HOME = /Users/Daniel
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/Daniel/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/Daniel/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = Daniel
 # environment
@@ -104,7 +101,7 @@ TMPDIR = /var/folders/pm/qzqp4smx2xldy358pwfjr7br0000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/Daniel/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/Daniel/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -112,7 +109,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.39207212.39207218
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.41202257.41202263
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -127,13 +124,10 @@ MAKEFILES :=
 <F = $(notdir $<)
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a5
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -141,9 +135,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 501
+VSCODE_PID = 60433
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=1/90=1%
+# Load=62/1024=6%, Rehash=0, Collisions=1/88=1%
 
 # Pattern-specific Variable Values
 
@@ -151,9 +145,9 @@ VSCODE_PID = 501
 
 # Directories
 
-# . (device 16777222, inode 40603538): 25 files, no impossibilities.
+# . (device 16777222, inode 40603538): 26 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -187,7 +181,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
 #  commands to execute (from `Makefile', line 2):
-	gcc main.c Contagem_Intersecoes.c Ordena_Numero.c ctrlF.c pilha.c -o main
+	gcc main.c Contagem_Intersecoes.c Ordena_Numero.c ctrlF.c fila.c -o main
 	
 
 # Not a target:
@@ -199,7 +193,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 18:27:05
+#  Last modified 2022-06-16 21:56:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,6 +226,6 @@ run:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 14 18:27:18 2022
+# Finished Make data base on Thu Jun 16 21:56:28 2022
 
  

@@ -4,17 +4,20 @@
 
 int main(void) {
 
-  ContagemIntersecoes("A.csv","B.csv",3,7,"contagens.txt");
+  int n=3;
+  int** matriz = AlocaMatriz(n,2);
+  matriz[0][0]=212;
+  matriz[0][1]=4;
+  matriz[1][0]=22;
+  matriz[1][1]=9;
+  matriz[2][0]=23;
+  matriz[2][1]=6;
 
-  Pilha* pilha=cria_pilha();
+  OrdenaNumeros(matriz, n);
 
-  insere_pilha(pilha, 27);
-  insere_pilha(pilha, 14);
-  insere_pilha(pilha, 34);
-
-  remove_pilha(pilha);
-
-  imprime_pilha(pilha);
+  for(int i=0;i<n;i++){
+    printf("%d %d\n",matriz[i][0],matriz[i][1]);
+  }
 
 }
 

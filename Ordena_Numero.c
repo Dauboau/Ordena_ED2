@@ -7,51 +7,35 @@ void OrdenaDigitos(int **A, int n, int pos){
     /*
         Entrada: A, matriz com duplas de n´umeros a serem ordenadas.
         Entrada: n, n´umero de linhas em A.
-        Entrada: posicao, posi¸c˜ao do d´ıgito a se considerar (10, 100, 1000, etc.).
+        Entrada: pos, posição do dígito a se considerar (10, 100, 1000, etc.).
     */
 
-   int B[10] = {0,0,0,0,0,0,0,0,0,0};
-   int digito = 0;
+   // Criação das filas
+   Fila* filas[10];
+   for(int i=0;i<10;i++){
+     filas[i]=cria_fila();
+   }
 
+   // Descobre o digito correspondente a posição desejada no número sendo lido
+   int digito = 0;
    for (size_t i = 0; i < n; i++){
-       
        digito = A[i][0]/pos;
        digito = digito%10;
-       B[digito] = B[digito]+1;
-
+       insere_fila(filas[digito],A[i][0],A[i][1]); // Insere o intervalo no final fila
    }
 
-   for (size_t i = 1; i <= 9; i++){
-
-      B[i] = B[i] + B[i-1];
-
+   // Tira os intervalos das filas do menor digito em diante
+   int pos_a=0;
+   for(int i=0;i<10;i++){
+    while(primeiro_fila(filas[i],0)!=-1){
+      // O primeiro inserido na fila é o primeiro a ser colocado na lista e assim por diante
+      A[pos_a][0] = primeiro_fila(filas[i],0);
+      A[pos_a][1] = primeiro_fila(filas[i],1);
+      remove_fila(filas[i]);
+      pos_a++;
+    }
+    free(filas[i]); // Limpa da memória o ponteiro apontando para as listas vazias
    }
-
-   int C[n][2];
-
-   for (size_t i = n-1; i >= 0; i--){
-
-    digito = A[i][0]/pos;
-    digito = digito%10;
-    B[digito] = B[digito]-1;
-    C[B[digito]][0] = A[i][0];
-    C[B[digito]][1] = A[i][1];
-
-    //gambiarra que ta fznd funcionar
-    if(i==0)
-      break;
-
-   }
-   
-   for (size_t i = 0; i < n; i++){
-
-      A[i][0] = C[i][0];
-      A[i][1] = C[i][1];
-
-   }
-   
-   
-   
 }
 
 void OrdenaNumeros(int **A, int n){
@@ -62,22 +46,26 @@ void OrdenaNumeros(int **A, int n){
         Obs: passar por referência uma matriz alocada dinamicamente.
     */
 
+    // Descobre-se o maior número
     int maior = 0;
-
     for (size_t i = 0; i < n; i++){
-
       if(A[i][0] > maior)
         maior = A[i][0];
-        
     }
 
+    // Pelo número de digitos do maior número, se chama a ordenação com base nos digitos
+    // do menos significativo ao mais significativo
     int pos = 1;
-
-    while((maior/pos) > 1){
-        
+    while((maior/pos) > 1){  
       OrdenaDigitos(A, n, pos);
+      if(debug){
+        printf("Início da Iteração:\n");
+        for(int i=0;i<n;i++){
+          printf("%d %d\n",A[i][0],A[i][1]);
+        }
+        printf("Fim da Iteração:\n");
+      }
       pos = pos*10;
-
     }
 }
 
