@@ -67,7 +67,7 @@ void Ctrl_F(char* nome_texto, char* nome_trechos, char* nome_saida){
         
             if(trecho[j] == '\0'){
 
-                fprintf(arq_saida,"%d, %d\n", (i-1), (j+i-2));
+                fprintf(arq_saida,"%d,%d\n", (i-1), (j+i-2));
                 break;
 
             }
