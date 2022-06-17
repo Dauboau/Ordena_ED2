@@ -58,13 +58,15 @@ void OrdenaNumeros(int **A, int n){
     int pos = 1;
     while((maior/pos) > 1){  
       OrdenaDigitos(A, n, pos);
-      if(debug){
+
+      if(debug){ // modo de debug
         printf("Início da Iteração:\n");
         for(int i=0;i<n;i++){
           printf("%d %d\n",A[i][0],A[i][1]);
         }
         printf("Fim da Iteração:\n");
       }
+
       pos = pos*10;
     }
 }
