@@ -2,31 +2,31 @@
 #include<stdlib.h>
 #include<string.h>
 
-void LerLinha(char **primeira_linha, FILE *arquivo) {
+void LerLinha(char **linha, FILE *arquivo) {
 
     //Variaveis auxiliares para controlar o tamanho e acessar uma posicao da string que armazenara o texto do arquivo
     size_t linha_len = 32;
     size_t char_index = 0;
 
-    *primeira_linha = malloc(sizeof(char)*linha_len);
+    *linha = malloc(sizeof(char)*linha_len);
 
     //O laço é executado até que se chegue ao fim de uma linha(\n) ou ao fim de um arquivo(!feof)
-    while (!feof(arquivo) && (*primeira_linha)[char_index - 1] != '\n') {
+    while (!feof(arquivo) && (*linha)[char_index - 1] != '\n') {
         
         //Se o ponteiro estiver na última posicao da string e feita a realocacao
         if (linha_len == char_index) {
             
             linha_len += 16;
-            *primeira_linha = realloc(*primeira_linha, sizeof(char)*linha_len);
+            *linha = realloc(*linha, sizeof(char)*linha_len);
         
         }
 
         //A copia e feita caracter a caracter
-        (*primeira_linha)[char_index] = fgetc(arquivo);
+        (*linha)[char_index] = fgetc(arquivo);
         char_index++;
     }
 
-    (*primeira_linha)[char_index - 1] = '\0';
+    (*linha)[char_index - 1] = '\0';
 }
 
 
