@@ -19,6 +19,10 @@ int main(void) {
     printf("%d %d\n",matriz[i][0],matriz[i][1]);
   }
 
+  //ContagemIntersecoes("A.csv","B.csv",3,7,"contagens.txt");
+
+  Contagem_Leituras("genoma_pequeno.txt", "pos_genes_pequeno.txt", "pos_fragmentos.csv", "fragmentos_pequeno.txt", 100, 300, "atividade_genica.txt");
+
 }
 
 /*

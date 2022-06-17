@@ -71,6 +71,7 @@ void OrdenaNumeros(int **A, int n){
     }
 }
 
+// Aloca uma matriz
 int **AlocaMatriz(int m, int n){
 
   int **M;
@@ -100,6 +101,7 @@ int **AlocaMatriz(int m, int n){
   return M;
 }
 
+// Libera uma matriz alocada anteriormente
 void LiberaMatriz(int **M, int m){
 
   for(int i = 0; i < m; i++)
