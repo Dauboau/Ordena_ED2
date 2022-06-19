@@ -17,9 +17,14 @@ struct elemento{
     struct elemento *prox;
 };
 
+struct fila{
+    struct elemento *inicio;
+    struct elemento *final;
+};
+
 typedef struct elemento Elem;
 
-typedef struct elemento* Fila;
+typedef struct fila Fila;
 
 
 Fila* cria_fila();

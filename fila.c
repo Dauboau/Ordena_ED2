@@ -5,73 +5,70 @@
 // Cria a fila
 Fila* cria_fila()
 {
-    Fila* pi = (Fila*) malloc(sizeof(Fila));
-    if(pi != NULL)
-        *pi = NULL;
-    return pi;
+    Fila* fi = (Fila*) malloc(sizeof(Fila));
+    if(fi != NULL){
+        fi->final = NULL;
+        fi->inicio = NULL;
+    }
+    return fi;
 }
 
 // Insere no final da fila
-int insere_fila(Fila* fila, Tipo_Dado ini,Tipo_Dado fim)
+int insere_fila(Fila* fi, Tipo_Dado ini,Tipo_Dado fim)
 {
-    if(fila == NULL)
+    if(fi == NULL)
         return 0;
-    Elem *no;
-    no = (Elem*) malloc(sizeof(Elem));
+    Elem *no = (Elem*) malloc(sizeof(Elem));
     if(no == NULL)
         return 0;
-    no->dado[0] = ini;
-    no->dado[1] = fim;
+    no->dado[0]=ini;
+    no->dado[1]=fim;
     no->prox = NULL;
-    if((*fila) == NULL){ //fila vazia: insere no início
-        *fila = no;
-    }else{
-        Elem *aux;
-        aux = *fila;
-        while(aux->prox != NULL){
-            aux = aux->prox;
-        }
-        aux->prox = no;
-    }
+    if(fi->final == NULL)//fila vazia
+        fi->inicio = no;
+    else
+        fi->final->prox = no;
+    fi->final = no;
     return 1;
 }
 
 // Pega o dado solicitado do primeiro da fila
-int primeiro_fila(Fila* pi,int p){
+int primeiro_fila(Fila* fi,int p){
 
-  if(pi == NULL)
+  if(fi == NULL)
     return -1;
 
-  if((*pi) == NULL) //lista vazia
+  if((fi->inicio) == NULL) //lista vazia
     return -1;
 
-  Elem *no = *pi;
+  Elem *no = fi->inicio;
 
   return  no->dado[p];
   
 }
 
 // Remove o primeiro da fila
-int remove_fila(Fila* pi)
+int remove_fila(Fila* fi)
 {
-    if(pi == NULL)
+    if(fi == NULL)
         return 0;
-    if((*pi) == NULL) //lista vazia
+    if(fi->inicio == NULL)//fila vazia
         return 0;
-
-    Elem *no = *pi;
-    *pi = no->prox;
+    Elem *no = fi->inicio;
+    fi->inicio = fi->inicio->prox;
+    if(fi->inicio == NULL)//fila ficou vazia
+        fi->final = NULL;
     free(no);
     return 1;
 }
 
 // Imprime a fila
-void imprime_fila(Fila* pi)
+void imprime_fila(Fila* fi)
 {
-    if(pi == NULL)
+    if(fi == NULL)
         return;
     printf("início da fila\n");
-    Elem* no = *pi;
+    Elem* no = fi->inicio;
     while(no != NULL){
         printf("%d %d\n",no->dado[0],no->dado[1]);
         no = no->prox;
