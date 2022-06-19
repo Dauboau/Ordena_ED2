@@ -3,6 +3,11 @@
 void OrdenaNumeros(int **A, int n);
 int **AlocaMatriz(int m, int n);
 void LiberaMatriz(int **M, int m);
+void ContagemIntersecoes(char* file_a,char* file_b,int na,int nb,char* output_file);
+void Ctrl_F(char* nome_texto, char* nome_trechos, char* nome_saida);
+void Contagem_Leituras(char* arq_genoma, char* arq_pos_genes, char* arq_pos_fragmentos, char* arq_fragmentos, int n_genes, int n_fragmentos, char* arq_saida);
+
+
 
 // TAD
 
