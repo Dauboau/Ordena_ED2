@@ -1,80 +1,85 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "declara.h"
 
-int main(void) {
+/*
+
+  Arquivo usado para a análise empírica da função "ContagemLeituras"
+
+  Cada linha 'ciclos_ini = clock()' armazena a contagem de clocks
+  Ja as linas 'soma_ciclos += clock() - ciclos_ini' armazenam a quantidade de ciclos de clock
+discorridos durante a execução da função.
+  Por fim, a operação ((double) soma_ciclos) / CLOCKS_PER_SEC) retorna o tempo, em segundos,
+de execução da função.
+
+*/
+
+int main(void){
+
+  FILE* fd;
+  fd = fopen("dados_contagem_leituras.txt", "w");
   
-  int n=3;
-  int** matrizx = AlocaMatriz(n,2);
-  matrizx[0][0]=212;
-  matrizx[0][1]=4;
-  matrizx[1][0]=22;
-  matrizx[1][1]=9;
-  matrizx[2][0]=23;
-  matrizx[2][1]=6;
+  clock_t ciclos_ini, soma_ciclos = 0;
 
-  OrdenaNumeros(matrizx,n);
+  fprintf(fd, "(genoma_grande.txt, pos_genes_grande.csv, fragmentos_pequeno.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_grande.csv", "pos_fragmentos(1).csv", "fragmentos_pequeno.txt", 10000, 300, "atividade_genica(1).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
 
-  for(int i=0;i<n;i++){
-    printf("%d %d\n",matrizx[i][0],matrizx[i][1]);
-  }
 
-  //time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+  fprintf(fd, "(genoma_grande.txt, pos_genes_grande.csv, fragmentos_medio.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_grande.csv", "pos_fragmentos(2).csv", "fragmentos_medio.txt", 10000, 3000, "atividade_genica(2).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
 
-  //fprintf(arq,"%f\n",time_taken);
 
-  //Contagem_Leituras("genoma_pequeno.txt", "pos_genes_pequeno.txt", "pos_fragmentos.csv", "fragmentos_pequeno.txt", 100, 300, "atividade_genica.txt");
+  fprintf(fd, "(genoma_grande.txt, pos_genes_grande.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_grande.csv", "pos_fragmentos(3).csv", "fragmentos_grande.txt", 10000, 30000, "atividade_genica(3).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+
+
+  fprintf(fd, "(genoma_grande.txt, pos_genes_pequeno.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_pequeno.csv", "pos_fragmentos(4).csv", "fragmentos_grande.txt", 100, 30000, "atividade_genica(4).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+  
+  fprintf(fd, "(genoma_grande.txt, pos_genes_medio.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_medio.csv", "pos_fragmentos(5).csv", "fragmentos_grande.txt", 1000, 30000, "atividade_genica(5).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+  
+  fprintf(fd, "(genoma_grande.txt, pos_genes_grande.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_grande.csv", "pos_fragmentos(6).csv", "fragmentos_grande.txt", 10000, 30000, "atividade_genica(6).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+
+  fprintf(fd, "(genoma_pequeno.txt, pos_genes_grande.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_pequeno.txt", "pos_genes_grande.csv", "pos_fragmentos(7).csv", "fragmentos_grande.txt", 10000, 30000, "atividade_genica(7).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+  
+  fprintf(fd, "(genoma_medio.txt, pos_genes_grande.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_medio.txt", "pos_genes_grande.csv", "pos_fragmentos(8).csv", "fragmentos_grande.txt", 10000, 30000, "atividade_genica(8).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+  
+  fprintf(fd, "(genoma_grande.txt, pos_genes_grande.csv, fragmentos_grande.txt)\n");
+  ciclos_ini = clock();
+  Contagem_Leituras("genoma_grande.txt", "pos_genes_grande.csv", "pos_fragmentos(9).csv", "fragmentos_grande.txt", 10000, 30000, "atividade_genica(9).txt");
+  soma_ciclos += clock() - ciclos_ini;
+  fprintf(fd, "%lf\n", ((double) soma_ciclos) / CLOCKS_PER_SEC);
+
+  fclose(fd);
+  return 0;
 
 }
-
-// Complexidade em função de m(número de figitos) e n(tamanho da entrada)
-  /*
-  int n=3;
-  int** matriz = AlocaMatriz(n,2);
-  matriz[0][0]=212;
-  matriz[0][1]=4;
-  matriz[1][0]=22;
-  matriz[1][1]=9;
-  matriz[2][0]=23;
-  matriz[2][1]=6;
-  */
-
- /*
-  for(int i=0;i<n;i++){
-    printf("%d %d\n",matriz[i][0],matriz[i][1]);
-  }
-  */
-
-  //ContagemIntersecoes("A.csv","B.csv",3,7,"contagens.txt");
-
-/*
-FILE *texto, *trechos, *saida;
-    texto = fopen("texto.txt", "r");
-    trechos = fopen("trechos.txt", "r");
-    saida = fopen("saida.txt", "a");
-
-    Ctrl_F(texto, trechos, saida);
-
-    fclose(texto);
-    fclose(trechos);
-    fclose(saida);
-
-    return 0;
-    */
-
- /*
-  int n=3;
-  int** matrizx = AlocaMatriz(n,2);
-  matrizx[0][0]=212;
-  matrizx[0][1]=4;
-  matrizx[1][0]=22;
-  matrizx[1][1]=9;
-  matrizx[2][0]=23;
-  matrizx[2][1]=6;
-
-  OrdenaNumeros(matrizx,n);
-
-  for(int i=0;i<n;i++){
-    printf("%d %d\n",matrizx[i][0],matrizx[i][1]);
-  }
-  */
