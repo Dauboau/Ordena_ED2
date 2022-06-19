@@ -2,46 +2,22 @@
 #include <stdlib.h>
 #include "declara.h"
 
-#include <time.h>
-
-#define min_e 1000
-#define max_e 1000000
-
 int main(void) {
   
-  FILE *arq = fopen("Análise_Empírica.csv","w");
-  double time_taken;
-  clock_t t;
-  int aleat_0;
-  int aleat_1=-1;
-  int max;
-  int** matriz=AlocaMatriz(max_e,2);
+  int n=3;
+  int** matrizx = AlocaMatriz(n,2);
+  matrizx[0][0]=212;
+  matrizx[0][1]=4;
+  matrizx[1][0]=22;
+  matrizx[1][1]=9;
+  matrizx[2][0]=23;
+  matrizx[2][1]=6;
 
-  for(int dig=1;dig<=10;dig++){
-    max=10*dig;
-    for(int entradas=min_e;entradas<=max_e;entradas=entradas*10){
-      time_taken=0;
+  OrdenaNumeros(matrizx,n);
 
-      for(int rep=0;rep<10;rep++){
-        srand(time(NULL));
-        aleat_0=rand()%max;
-        matriz[0][0]=aleat_0;
-        while(aleat_1<aleat_0){
-          aleat_1=rand()%max;
-        }
-        matriz[0][1]=aleat_1;
-
-        t = clock();
-        OrdenaNumeros(matriz,entradas);
-        t = clock() - t;
-        time_taken = time_taken+((double)t)/CLOCKS_PER_SEC;
-      }
-      fprintf(arq,"%d,%d,%f\n",entradas,dig,time_taken/10); // em segundos
-    }
+  for(int i=0;i<n;i++){
+    printf("%d %d\n",matrizx[i][0],matrizx[i][1]);
   }
-
-  LiberaMatriz(matriz, max_e);
-  
 
   //time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
 
